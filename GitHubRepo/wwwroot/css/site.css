@@ -1,0 +1,184 @@
+/* Medias Queries*/
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 575px) {
+    nav {
+        height: auto !important;
+    }
+
+    .container-fluid {
+        width: 100% !important;
+    }
+}
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #dad7d7 #F4F4F4;
+}
+
+    /* Works on Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: #F4F4F4;
+        border-radius: 3px;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: #dad7d7;
+        border-radius: 3px;
+        border: 2px solid #F4F4F4;
+    }
+
+html {
+    font-size: 14px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: 'Inter', sans-serif;
+    background-color: #A598EE;
+}
+
+.container-fluid {
+    width: 87%;
+}
+
+.nav-link {
+    color: #A598EE !important;
+}
+
+.btnPesquisar {
+    background-color: #50C058 !important;
+    border-radius: 5px !important;
+    width: 70px !important;
+    cursor: pointer !important;
+}
+
+    .btnPesquisar img {
+        height: 17px !important;
+    }
+
+.inputPesquisa {
+    height: 55px;
+    border-radius: 5px;
+}
+
+.listaDados {
+    border-radius: 5px;
+    height: 525px;
+    overflow-y: auto;
+}
+
+.iconGithub {
+    margin-right: 5px;
+    transform: translateY(-1px);
+    width: 35px;
+}
+
+.iconAvatar {
+    margin-right: 5px;
+    transform: translateY(-1px);
+    width: 35px;
+}
+
+.iconDetalhes {
+    float: right;
+    width: 20px;
+    cursor: pointer;
+}
+
+
+.itemDados {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.infoDados {
+    width: 93%;
+}
+
+    .infoDados span {
+        font-size: 14px;
+        opacity: 0.5;
+    }
+
+.fade {
+    transition: opacity .15s linear !important;
+}
+
+.c-loader {
+    animation: is-rotating 1s infinite;
+    border: 6px solid white;
+    border-radius: 50%;
+    border-top-color: #A5F0EE;
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+
+.modalDados .modal-body {
+    padding: 3.5rem !important;
+}
+
+.modalDados .modal-header {
+    border-bottom: none !important;
+}
+
+.modalDados .modal-content {
+    border-radius: 10px;
+}
+
+.formDados input {
+    border-color: #A598EE !important;
+    color: #696969 !important;
+    background-color: white !important;
+}
+
+.formDados textarea {
+    border-color: #A598EE !important;
+    color: #696969 !important;
+    background-color: white !important;
+}
+
+.formDados label {
+    color: black;
+    font-weight: 600;
+}
+    #infoUsuario .form-control {
+        border-color: #A598EE;
+        display: flex;
+        align-items: center;
+    }
+
+.labelUsuario {
+    display: flex;
+    flex-direction: column;
+    margin-left: 22px;
+}

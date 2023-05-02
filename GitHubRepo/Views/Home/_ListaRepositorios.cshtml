@@ -1,0 +1,34 @@
+﻿@model List<RepositorioExibicao>
+
+<ul class="list-group list-group-flush listaDados" id="listaRepositorios">
+    @if (Model != null && Model.Count > 0)
+    {
+        @foreach (var repositorio in Model)
+        {
+            <li class="list-group-item">
+                <div class="itemDados">
+                    <img src="~/imgs/github.png" class="iconGithub" />
+                    <div class="infoDados">
+                        @repositorio.Nome
+                        <span><span>@@</span>@repositorio?.Usuario?.Login - @String.Format("{0:dd/MM/yyyy}", repositorio?.CriadoEm)</span>
+                        <br>
+                        @if (!string.IsNullOrEmpty(repositorio?.Descricao))
+                        {
+                            <span class="descricaoRepositorio">@repositorio?.Descricao</span>
+                        }
+                    </div>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+
+                    <img src="~/imgs/visualizar.png" class="iconDetalhes" id="@repositorio?.Id" onclick="fnObterRepositorio(@repositorio?.Id, this)" />
+                </div>
+            </li>
+        }
+    }
+    else
+    {
+        <li class="list-group-item">
+            Sem resultados...
+        </li>
+    }
+</ul>
+

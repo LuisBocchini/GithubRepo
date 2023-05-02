@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Usuários";
+}
+@section scripts{
+<script src="~/js/Usuario.js" asp-append-version="true"></script>
+
+<script>
+    $('#modalRepositorio').on('shown.bs.modal', function (event) {
+        $("#modalUsuario").modal("hide");
+    });
+
+    $('#modalRepositorio').on('hidden.bs.modal', function (event) {
+       $("#modalUsuario").modal("show");
+    });
+</script>
+}
+<div class="input-group mb-3">
+    <input type="text" class="form-control inputPesquisa" placeholder="Digite o nome do usuário..." aria-label="Recipient's username" aria-describedby="button-addon2" id="inputPesquisaUsuario">
+    <button class="btn btn-outline-secondary btnPesquisar" type="button" id="btnPesquisar" onclick="fnPesquisarUsuarios();"><img src="~/imgs/pesquisar.png" /></button>
+</div>
+
+<div id="usuarios" style="display: none;">
+</div>
+<div class="c-loader" style="display: none;"></div>
+<div class="modal fade modalDados" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="modalUsuario">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer" style="border-top: 0">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modalDados" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="modalRepositorio">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer" style="border-top: 0">
+            </div>
+        </div>
+    </div>
+</div>

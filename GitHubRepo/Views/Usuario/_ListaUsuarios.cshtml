@@ -1,0 +1,29 @@
+﻿@model List<UsuarioExibicao>
+
+<ul class="list-group list-group-flush listaDados" id="">
+    @if (Model != null && Model.Count > 0)
+    {
+        @foreach (var usuario in Model)
+        {
+            <li class="list-group-item">
+                <div class="itemDados">
+                    <img src="@usuario.Avatar" class="iconAvatar" />
+                    <div class="infoDados">
+                        @usuario.Login
+                    </div>
+                    <div class="detalhes">
+                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                        <img src="~/imgs/visualizar.png" class="iconDetalhes" id="@usuario?.Id" onclick="fnObterUsuario(@usuario?.Id, this)" />
+                    </div>
+                </div>
+            </li>
+        }
+    }
+    else
+    {
+        <li class="list-group-item">
+            Sem resultados...
+        </li>
+    }
+</ul>
+

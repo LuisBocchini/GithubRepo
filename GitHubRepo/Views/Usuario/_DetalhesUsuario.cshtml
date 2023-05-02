@@ -1,0 +1,69 @@
+﻿@model UsuarioExibicao
+@{
+    var nome = Model != null && !string.IsNullOrEmpty(Model.Nome) ? Model.Nome : "Indisponível";
+    var email = Model != null && !string.IsNullOrEmpty(Model.Email) ? Model.Email : "Indisponível";
+    var localidade = Model != null && !string.IsNullOrEmpty(Model.Localidade) ? Model.Localidade : "Indisponível";
+    var empresa = Model != null && !string.IsNullOrEmpty(Model.Empresa) ? Model.Empresa : "Indisponível";
+    var blog = Model != null && !string.IsNullOrEmpty(Model.Blog) ? Model.Blog : "Indisponível";
+    var twitter = Model != null && !string.IsNullOrEmpty(Model.Twitter) ? Model.Twitter : "Indisponível";
+}
+@if (Model != null)
+{
+    <form class="row g-3 formDados" id="formRepositorio">
+        <div class="col-md-12" style="transform: translateY(-11px);padding-left: 0;margin-top: 0;">
+            <img src="@Model?.Avatar" style="width: 90px;margin-right: 16px;" />
+            <span style="font-size: 20px;font-weight: bold;">@Model?.Login</span>
+        </div>
+
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="inputLinguagem" value="@nome" readonly>
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Email</label>
+            <input type="text" class="form-control" id="inputLinguagem" value="@email" readonly>
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Localidade</label>
+            <input type="text" class="form-control" id="inputLinguagem" value="@localidade" readonly>
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Empresa</label>
+            <input type="text" class="form-control" id="inputLinguagem" value="@empresa" readonly>
+        </div>
+
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Blog</label>
+            <input type="text" class="form-control" id="inputLinguagem" value="@blog" readonly>
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Twitter</label>
+            <input type="text" class="form-control" id="inputLinguagem" value="@twitter" readonly>
+        </div>
+         <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Data Criação</label>
+            <input type="text" class="form-control" id="inputLinguagem" value="@Model?.CriadoEm" readonly>
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Última Atualização</label>
+            <input type="text" class="form-control" id="inputLinguagem" value="@Model?.AtualizadoEm" readonly>
+        </div>
+
+
+        <div class="col-md-12" style="margin-bottom: 26px;">
+            <label for="inputEmail4" class="form-label">Perfil Github</label>
+            <input type="text" class="form-control" id="inputNome" value="@Model?.LinkPerfil" readonly>
+        </div>
+        <div class="col-md-12" id="repositoriosUsuario">
+            <label for="inputEmail4" class="form-label">Repositórios</label>
+            <partial name="../Home/_ListaRepositorios" model=Model?.Repositorios />
+        </div>
+
+    </form>
+}
+else
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.erro
+    </div>
+}

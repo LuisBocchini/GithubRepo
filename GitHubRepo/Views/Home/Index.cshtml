@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="input-group mb-3">
+    <input type="text" class="form-control inputPesquisa" placeholder="Digite o nome do repositório..." aria-label="Recipient's username" aria-describedby="button-addon2" id="inputPesquisa">
+    <button class="btn btn-outline-secondary btnPesquisar" type="button" id="btnPesquisar" onclick="fnPesquisarRepositorios();"><img src="~/imgs/pesquisar.png" /></button>
+</div>
+<div id="repositorios" style="display: none;">
+
+</div>
+<div class="c-loader" style="display: none;"></div>
+<div class="modal fade modalDados" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="modalRepositorio">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       
+      </div>
+      <div class="modal-footer" style="border-top: 0">
+      </div>
+    </div>
+  </div>
+</div>
